@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "dvxgit-jsoriano/Laravel-12-custom-starter-kit",
+    "name": "dvxgit-jsoriano/laravel12-custom-starter-kit",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
