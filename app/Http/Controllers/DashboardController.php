@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index() {
-        $settings = Setting::all();
+        $settings = Setting::first();
         return view('dashboard', compact('settings'));
     }
 }

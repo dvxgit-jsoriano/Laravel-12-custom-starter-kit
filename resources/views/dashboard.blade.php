@@ -2,22 +2,19 @@
     <h1 class="text-2xl font-bold">Welcome to my dashboard!</h1>
     <p class="mt-2 text-gray-600">This is an example dashboard using Tailwind CSS.</p>
 
+    <hr class="my-2 border-gray-200">
+
     <div class="mt-2 inline-flex items-center gap-2">
-        <input type="checkbox" name="is-online" id="is-online" value="Enable Online" checked> Enable Online
+        <input type="checkbox" name="is-online" id="is-online" {{ $settings->value ? 'checked' : '' }}
+            value="Enable Online"> Enable Online
         <button onclick="save()"
             class="rounded border shadow px-2 py-1 border-green-400 bg-green-500 text-green-50 hover:bg-green-400 cursor-pointer">Save</button>
         <a href="{{ route('root') }}" target='_blank'
             class="rounded border shadow px-2 py-1 border-yellow-900 bg-yellow-500 text-yellow-900 hover:bg-yellow-400 cursor-pointer">View
             Start Page</a>
     </div>
-
-    <div>
-        <ul>
-            @foreach ($settings as $setting)
-                <li>{{ $setting->is_online }}</li>
-            @endforeach
-        </ul>
-    </div>
+    <p class="mt-2 text-gray-600">The "Enable Online" above settings will redirect your home route to a <b>landing
+            page</b> if true and to <b>login page</b> if false.</p>
 
     <script>
         function save() {
