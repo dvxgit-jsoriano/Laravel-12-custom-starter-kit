@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
@@ -24,11 +25,13 @@ Route::get('/', function () {
     }
 
     return view('welcome');
-});
+})->name('root');
 
 Route::get('/login', [LoginController::class, 'index'])->name('custom.login');
 
 Route::name('admin.')->group(function() {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('save-setting', [SettingController::class, 'save'])->name('save-setting');
+
     Route::get('users', [UserController::class, 'index'])->name('users');
 });

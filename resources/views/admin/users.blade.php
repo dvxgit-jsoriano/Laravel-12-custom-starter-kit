@@ -1,6 +1,13 @@
 <x-app>
-    <h2 class="text-2xl font-semibold mb-4">Users List</h2>
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-semibold">Users List</h2>
+        <div class="inline">
+            <button
+                class="rounded border shadow px-2 py-1 border-green-400 bg-green-500 text-green-50 hover:bg-green-400 cursor-pointer">Create</button>
+        </div>
+    </div>
 
+    <!-- Table Content -->
     <div class="border border-gray-200 rounded-lg shadow-sm overflow-x-auto max-h-[500px]">
         <table class="min-w-full divide-y divide-gray-200 text-sm text-left">
             <thead class="bg-gray-200">
@@ -15,7 +22,7 @@
             </thead>
             <tbody class="divide-y divide-gray-100">
 
-                @for ($i = 1; $i <= 1; $i++)
+                @for ($i = 1; $i <= 50; $i++)
                     <tr class="hover:bg-gray-50">
                         <td class="px-4 py-2">{{ $i }}</td>
                         <td class="px-4 py-2">User {{ $i }}</td>
@@ -29,10 +36,10 @@
                         </td>
                         <td class="px-4 py-2 text-right">
                             <button
-                                class="text-orange-600 bg-orange-100 hover:text-orange-900 font-medium cursor-pointer border border-orange-300 px-1 rounded"><i
+                                class="text-orange-600 bg-orange-50 hover:text-orange-500 font-medium cursor-pointer border border-orange-300 px-1 rounded"><i
                                     class="fa-solid fa-pencil"></i></button>
                             <button
-                                class="text-red-600 bg-red-100 hover:text-red-900 font-medium cursor-pointer border border-red-300 px-1 rounded"><i
+                                class="text-red-600 bg-red-50 hover:text-red-500 font-medium cursor-pointer border border-red-300 px-1 rounded"><i
                                     class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
