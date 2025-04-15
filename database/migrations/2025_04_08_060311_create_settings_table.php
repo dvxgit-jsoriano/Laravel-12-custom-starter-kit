@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Setting;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +17,10 @@ return new class extends Migration
             $table->boolean('is_online')->default(true);
             $table->timestamps();
         });
+
+        Setting::create([
+            'is_online' => true,
+        ]);
     }
 
     /**

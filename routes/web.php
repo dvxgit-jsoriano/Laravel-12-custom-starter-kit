@@ -34,4 +34,9 @@ Route::name('admin.')->group(function() {
     Route::post('save-setting', [SettingController::class, 'save'])->name('save-setting');
 
     Route::get('users', [UserController::class, 'index'])->name('users');
+    Route::get('users-add', [UserController::class, 'create'])->name('users-add');
+    Route::post('users-store', [UserController::class, 'store'])->name('users-store');
+    Route::get('users-edit/{user}',[UserController::class, 'edit'])->name('users-edit');
+    Route::post('users-update/{user}',[UserController::class, 'update'])->name('users-update');
+    Route::delete('users-destroy/{user}', [UserController::class, 'destroy'])->name('users-destroy');
 });
